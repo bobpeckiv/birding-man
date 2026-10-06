@@ -7,7 +7,7 @@
 <meta name="description" content="Birding Man is an annual Austin gathering hosted at ArtUs Co — birds of prey and field talks by day, a juried art exhibition and party by night.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,450;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,450;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
     --bg: #0c0b0f;
@@ -24,6 +24,7 @@
     --line: rgba(243,238,230,0.14);
     --line-strong: rgba(243,238,230,0.32);
     --text-rgb: 12,11,15;
+    --display: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   }
 
   *{box-sizing:border-box;}
@@ -40,11 +41,11 @@
   img{max-width:100%;display:block;}
   a{color:inherit;}
   h1,h2,h3{
-    font-family:'Anton',sans-serif;
-    font-weight:400;
-    line-height:1;
+    font-family:var(--display);
+    font-weight:700;
+    line-height:1.02;
     margin:0;
-    letter-spacing:0.01em;
+    letter-spacing:-0.015em;
   }
   .wrap{
     max-width:1120px;
@@ -90,11 +91,11 @@
     text-decoration:none;
     color:var(--text);
   }
-  .brand svg{width:30px;height:30px;flex:none;}
+  .brand-mark{width:34px;height:34px;flex:none;border-radius:50%;object-fit:cover;object-position:44% 38%;border:1px solid var(--line-strong);}
   .brand span{
-    font-family:'Anton',sans-serif;
-    font-size:1.2rem;
-    letter-spacing:0.02em;
+    font-family:var(--display);font-weight:700;
+    font-size:1.15rem;
+    letter-spacing:-0.01em;
   }
   nav.links{
     display:flex;
@@ -171,8 +172,9 @@
     gap:40px;
   }
   .hero h1{
-    font-size:clamp(3.2rem,8vw,6.2rem);
-    letter-spacing:0.01em;
+    font-size:clamp(3rem,7.4vw,5.8rem);
+    line-height:0.96;
+    letter-spacing:-0.03em;
     text-transform:uppercase;
   }
   .hero .sub{
@@ -252,7 +254,7 @@
       radial-gradient(circle, rgba(169,211,230,0.14), transparent 70%);
     z-index:0;
   }
-  .hero-mark svg{width:100%;height:auto;position:relative;z-index:1;}
+  .hero-mark img{width:100%;aspect-ratio:1/1;border-radius:50%;object-fit:cover;object-position:44% 38%;position:relative;z-index:1;border:1px solid var(--line-strong);}
 
   @media (max-width:860px){
     .hero-grid{grid-template-columns:1fr;}
@@ -397,7 +399,7 @@
     padding:28px 26px;
   }
   .yearone-card .stat{
-    font-family:'Anton',sans-serif;
+    font-family:var(--display);font-weight:700;
     font-size:1.9rem;
     color:var(--pink);
   }
@@ -450,7 +452,7 @@
     display:flex;
     align-items:center;
     justify-content:center;
-    font-family:'Anton',sans-serif;
+    font-family:var(--display);font-weight:700;
     font-size:1.2rem;
     color:var(--pink);
     margin-bottom:18px;
@@ -512,7 +514,7 @@
     color:var(--text-soft);
   }
   .call-status .value{
-    font-family:'Anton',sans-serif;
+    font-family:var(--display);font-weight:700;
     font-size:1.5rem;
     margin-top:6px;
     color:var(--pink);
@@ -566,7 +568,7 @@
     color:var(--text-soft);
   }
   .shop-panel .value{
-    font-family:'Anton',sans-serif;
+    font-family:var(--display);font-weight:700;
     font-size:1.4rem;
     margin-top:6px;
     color:var(--blue-light);
@@ -644,16 +646,7 @@
 <header id="site-header">
   <div class="nav-row">
     <a class="brand" href="#top">
-      <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <defs>
-          <linearGradient id="navmark" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stop-color="#eab6de"/>
-            <stop offset="100%" stop-color="#6f93c2"/>
-          </linearGradient>
-        </defs>
-        <path d="M6 30c3-8 8-13 13-13 2 0 3 1 3 3 0-4 3-8 8-9-2 3-3 6-3 9 3-1 6-1 8 1-4 1-7 3-9 6-3 5-9 7-14 6-3-1-5-2-6-3z" fill="url(#navmark)"/>
-        <circle cx="27" cy="14" r="1.4" fill="#0c0b0f"/>
-      </svg>
+      <img class="brand-mark" src="kingbird.jpg" alt="">
       <span>Birding Man</span>
     </a>
     <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" onclick="document.getElementById('site-header').classList.toggle('open'); this.setAttribute('aria-expanded', document.getElementById('site-header').classList.contains('open'))"><span></span></button>
@@ -695,20 +688,8 @@
           <a class="btn btn-ghost" href="#day">See the schedule</a>
         </div>
       </div>
-      <div class="hero-mark" aria-hidden="true">
-        <svg viewBox="0 0 300 340" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="birdmark" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#a9d3e6"/>
-              <stop offset="55%" stop-color="#6f93c2"/>
-              <stop offset="100%" stop-color="#5e3c94"/>
-            </linearGradient>
-          </defs>
-          <path d="M150 30c-4 22-2 40 8 58 14-8 30-8 42 2-16 4-26 14-30 30 18-4 34 2 44 18-20-2-36 4-46 18 10 8 14 20 12 34-14-10-28-12-42-6 4 18-2 34-16 46-6-16-4-32 6-46-16 2-30-4-40-16 14-2 26-10 34-22-16-2-28-12-34-28 16 2 28-4 36-18-14-2-24-12-28-26 14 4 24 0 32-10-6-12-6-24 0-36 6 8 14 12 22 12z" fill="url(#birdmark)"/>
-          <path d="M150 30c-4 22-2 40 8 58 14-8 30-8 42 2-16 4-26 14-30 30 18-4 34 2 44 18-20-2-36 4-46 18 10 8 14 20 12 34-14-10-28-12-42-6 4 18-2 34-16 46" stroke="#f3eee6" stroke-width="1" fill="none" opacity="0.3"/>
-          <ellipse cx="150" cy="118" rx="4" ry="4" fill="#f3eee6"/>
-          <path d="M150 100c-2 8-2 16 0 24" stroke="#f3eee6" stroke-width="1.5" fill="none" opacity="0.4"/>
-        </svg>
+      <div class="hero-mark">
+        <img src="kingbird.jpg" alt="A yellow-bellied kingbird perched on a dark branch, looking up">
       </div>
     </div>
   </section>
